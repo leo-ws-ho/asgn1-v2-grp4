@@ -13,7 +13,15 @@ function drawACard() {
  * [0, 4, 8, 12, 16] indicates [SA, SK, SQ, SJ, ST]
  */
 function drawHand() {
-  // Your code here.
+  let hand = [];
+
+  while (hand.length < 5) {
+    let card = drawACard();
+    if (!hand.includes(card)) hand.push(card);
+  }
+
+  sortHand(hand);
+  return hand;
 }
 
 /**
